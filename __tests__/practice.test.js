@@ -87,14 +87,14 @@
 //   expect(() => compileAndroidCode()).toThrow(/JDK/);
 // });
 
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // resolve('peanut butter');
-      reject('error');
-    }, 1000);
-  });
-}
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('peanut butter');
+//       // reject('error');
+//     }, 1000);
+//   });
+// }
 // test('the data is peanut butter', () => {
 //   return fetchData().then(data => {
 //     expect(data).toBe('peanut butter');
@@ -124,7 +124,31 @@ function fetchData() {
 // });
 
 // promiseがrejectされることを期待するケースでは .catch メソッドを使用
-test('the fetch fails with an error', () => {
-  expect.assertions(1);
-  return fetchData().catch(e => expect(e).toMatch('error'));
-});
+// test('the fetch fails with an error', () => {
+//   expect.assertions(1);
+//   return fetchData().catch(e => expect(e).toMatch('error'));
+// });
+
+// test('the data is peanut butter', done => {
+//   function callback(error, data) {
+//     if (error) {
+//       done(error);
+//       return;
+//     }
+//     try {
+//       expect(data).toBe('peanut butter');
+//       done();
+//     } catch (error) {
+//       done(error);
+//     }
+//   }
+//   fetchData2(callback);
+// });
+
+// test('the data is peanut butter', () => {
+//   return expect(fetchData()).resolves.toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', () => {
+//   return expect(fetchData()).rejects.toMatch('error');
+// });
