@@ -1,5 +1,5 @@
 ## 練習中
-https://jestjs.io/ja/docs/asynchronous
+https://jestjs.io/ja/docs/setup-teardown
 
 ## 参考
 https://tcd-theme.com/2021/12/javascript-jest.html
