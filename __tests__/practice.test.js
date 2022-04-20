@@ -76,13 +76,79 @@
 //   expect(new Set(shoppingList)).toContain('milk');
 // });
 
-function compileAndroidCode() {
-  throw new Error('you are using the wrong JDK');
-}
-test('compiling android goes as expected', () => {
-  // 例外をスローする関数は、ラッピング関数内で呼び出される必要がある
-  expect(() => compileAndroidCode()).toThrow();
-  expect(() => compileAndroidCode()).toThrow(Error);
-  expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
-  expect(() => compileAndroidCode()).toThrow(/JDK/);
-});
+// function compileAndroidCode() {
+//   throw new Error('you are using the wrong JDK');
+// }
+// test('compiling android goes as expected', () => {
+//   // 例外をスローする関数は、ラッピング関数内で呼び出される必要がある
+//   expect(() => compileAndroidCode()).toThrow();
+//   expect(() => compileAndroidCode()).toThrow(Error);
+//   expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
+//   expect(() => compileAndroidCode()).toThrow(/JDK/);
+// });
+
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('peanut butter');
+//       // reject('error');
+//     }, 1000);
+//   });
+// }
+// test('the data is peanut butter', () => {
+//   return fetchData().then(data => {
+//     expect(data).toBe('peanut butter');
+//   });
+// });
+
+// test('the data is peanut butter', async () => {
+//   const data = await fetchData();
+//   expect(data).toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', async () => {
+//   expect.assertions(1);
+//   try {
+//     await fetchData();
+//   } catch (e) {
+//     expect(e).toMatch('error');
+//   }
+// });
+
+// test('the data is peanut butter', async () => {
+//   await expect(fetchData()).resolves.toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', async () => {
+//   await expect(fetchData()).rejects.toMatch('error');
+// });
+
+// promiseがrejectされることを期待するケースでは .catch メソッドを使用
+// test('the fetch fails with an error', () => {
+//   expect.assertions(1);
+//   return fetchData().catch(e => expect(e).toMatch('error'));
+// });
+
+// test('the data is peanut butter', done => {
+//   function callback(error, data) {
+//     if (error) {
+//       done(error);
+//       return;
+//     }
+//     try {
+//       expect(data).toBe('peanut butter');
+//       done();
+//     } catch (error) {
+//       done(error);
+//     }
+//   }
+//   fetchData2(callback);
+// });
+
+// test('the data is peanut butter', () => {
+//   return expect(fetchData()).resolves.toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', () => {
+//   return expect(fetchData()).rejects.toMatch('error');
+// });
