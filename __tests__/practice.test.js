@@ -76,13 +76,26 @@
 //   expect(new Set(shoppingList)).toContain('milk');
 // });
 
-function compileAndroidCode() {
-  throw new Error('you are using the wrong JDK');
+// function compileAndroidCode() {
+//   throw new Error('you are using the wrong JDK');
+// }
+// test('compiling android goes as expected', () => {
+//   // 例外をスローする関数は、ラッピング関数内で呼び出される必要がある
+//   expect(() => compileAndroidCode()).toThrow();
+//   expect(() => compileAndroidCode()).toThrow(Error);
+//   expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
+//   expect(() => compileAndroidCode()).toThrow(/JDK/);
+// });
+
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('peanut butter');
+    }, 1000);
+  });
 }
-test('compiling android goes as expected', () => {
-  // 例外をスローする関数は、ラッピング関数内で呼び出される必要がある
-  expect(() => compileAndroidCode()).toThrow();
-  expect(() => compileAndroidCode()).toThrow(Error);
-  expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
-  expect(() => compileAndroidCode()).toThrow(/JDK/);
+test('the data is peanut butter', () => {
+  return fetchData().then(data => {
+    expect(data).toBe('peanut butter');
+  });
 });
